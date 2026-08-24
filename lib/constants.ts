@@ -1,7 +1,7 @@
 export const SITE_NAME = "Professional Techs";
 export const SITE_DESCRIPTION =
   "Professional Techs is a global software development company building web, mobile, cloud and AI-powered products for ambitious businesses worldwide.";
-export const SITE_URL = "https://professionaltechs.com";
+export const SITE_URL = "https://professionaltechs.co";
 
 export const CONTACT_EMAIL = "professionalstechs@gmail.com";
 export const CONTACT_PHONE = "03128672451";
