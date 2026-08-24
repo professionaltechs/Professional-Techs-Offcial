@@ -26,6 +26,9 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     type: "website",
   },
+  verification: {
+    google: "4QqchIOWLZAf9kGdrqIxVrYFvXmxuAg67jjHSAOUMm8",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
