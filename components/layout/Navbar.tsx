@@ -43,7 +43,7 @@ export default function Navbar() {
             <span className="text-lg font-bold text-ink uppercase">{SITE_NAME}</span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-5 lg:gap-8">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}

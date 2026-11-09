@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import SiteChrome from "@/components/layout/SiteChrome";
 import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from "@/lib/constants";
 
 const poppins = Poppins({
@@ -35,9 +36,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={poppins.variable}>
       <body className="font-sans antialiased">
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <SiteChrome navbar={<Navbar />} footer={<Footer />}>
+          {children}
+        </SiteChrome>
       </body>
     </html>
   );

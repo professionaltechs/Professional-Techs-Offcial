@@ -34,3 +34,31 @@ export interface TeamMember {
   role: string;
   photo: string;
 }
+
+export type PostStatus = "draft" | "published";
+
+export interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  /** Markdown */
+  content: string;
+  coverImage?: string;
+  category: string;
+  tags: string[];
+  author: string;
+  status: PostStatus;
+  featured: boolean;
+  /** ISO date string shown on the post */
+  publishedAt: string;
+  createdAt: string;
+  updatedAt: string;
+  seoTitle?: string;
+  seoDescription?: string;
+}
+
+export type BlogPostInput = Omit<BlogPost, "id" | "createdAt" | "updatedAt">;
+
+/** Lightweight version of a post (no body) for listing pages. */
+export type BlogPostSummary = Omit<BlogPost, "content"> & { readingTime: number };

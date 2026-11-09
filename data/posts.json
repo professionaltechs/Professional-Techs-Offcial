@@ -1,0 +1,59 @@
+[
+  {
+    "id": "seed-nextjs-default",
+    "slug": "why-we-build-most-web-products-on-nextjs",
+    "title": "Why we build most web products on Next.js",
+    "excerpt": "Server rendering, a clear routing model and one codebase for front end and API: here is why Next.js is our default starting point for new web projects.",
+    "content": "When a client asks us for a new website or web app, we usually start from the same place: Next.js. This is not about following a trend. It is about removing decisions that slow a project down.\n\n## Fast pages without extra work\n\nNext.js renders pages on the server by default. Visitors get real HTML straight away instead of waiting for a large JavaScript bundle to build the page in their browser. That helps perceived speed, and it also helps search engines read your content.\n\n## One codebase for pages and APIs\n\nContact forms, quote requests and small integrations usually need a bit of backend logic. In Next.js a route handler lives next to the pages that use it, so a small team can ship a complete feature without juggling two projects.\n\n```tsx\n// app/api/contact/route.ts\nexport async function POST(req: Request) {\n  const data = await req.json();\n  // validate, then send the email or save the lead\n  return Response.json({ success: true });\n}\n```\n\n## A routing model people understand\n\nFolders become URLs. A new page is a new folder with a `page.tsx` file inside. New developers can find their way around a project in minutes, which matters when a project outlives its first team.\n\n## When we would choose something else\n\n- A purely static brochure site that never changes may not need a framework at all.\n- A product that is mostly a native mobile app should start with the mobile app.\n- A team that already has a stable stack it knows well should rarely switch just for the sake of it.\n\n## The short version\n\nNext.js gives us good defaults for speed, SEO and structure, so more of the budget goes into your product instead of plumbing. If you are planning a web project, [talk to us](/contact) and we will help you pick the right approach.\n",
+    "category": "Web Development",
+    "tags": [
+      "Next.js",
+      "React",
+      "Performance"
+    ],
+    "author": "Professional Techs Team",
+    "status": "published",
+    "featured": true,
+    "publishedAt": "2026-11-03T09:00:00.000Z",
+    "createdAt": "2026-11-03T09:00:00.000Z",
+    "updatedAt": "2026-11-03T09:00:00.000Z"
+  },
+  {
+    "id": "seed-seo-basics",
+    "slug": "seo-basics-every-business-website-should-get-right",
+    "title": "SEO basics every business website should get right",
+    "excerpt": "Before paying for advanced SEO, make sure the fundamentals are in place: clear titles, fast pages, mobile-friendly layouts and a sitemap search engines can read.",
+    "content": "Most business websites do not need tricks to rank. They need the basics done properly. Here is the checklist we run through before anything else.\n\n## 1. Give every page its own title and description\n\nEach page should have a unique title that says what the page is about, and a short description that makes someone want to click. Duplicate or missing titles are one of the most common problems we see.\n\n## 2. Make the site fast on a phone\n\nMost visitors arrive on mobile. Compress images, avoid loading heavy scripts you do not use, and test on a real phone connection rather than only on a fast office network.\n\n## 3. Write headings that structure the page\n\nUse one main heading per page and organise the rest with sub-headings. This helps readers scan the page and helps search engines understand what each section covers.\n\n## 4. Link your pages together\n\nInternal links show visitors and search engines how your content connects. When you publish a new article, link to it from related pages, and link out from it to your services.\n\n## 5. Publish a sitemap and robots file\n\nA sitemap lists the pages you want indexed. A robots file tells crawlers which areas to skip, such as admin or API routes. Both are small files that make crawling cleaner.\n\n## 6. Publish content people actually search for\n\nThink about the questions your customers ask before they contact you, and answer them in plain language. A helpful article that matches a real question will usually do more than a page stuffed with keywords.\n\n## Where to go from here\n\nIf these basics are in place, deeper work such as structured data, content planning and link building can pay off. If they are not, fix them first. Need a hand? Our team can [audit your site](/contact).\n",
+    "category": "SEO",
+    "tags": [
+      "SEO",
+      "Content",
+      "Website"
+    ],
+    "author": "Professional Techs Team",
+    "status": "published",
+    "featured": false,
+    "publishedAt": "2026-10-20T09:00:00.000Z",
+    "createdAt": "2026-10-20T09:00:00.000Z",
+    "updatedAt": "2026-10-20T09:00:00.000Z"
+  },
+  {
+    "id": "seed-ai-delivery",
+    "slug": "using-ai-in-a-software-project-without-losing-control",
+    "title": "Using AI in a software project without losing control",
+    "excerpt": "AI tools can speed up prototypes, tests and documentation. The teams that benefit most are the ones that keep humans in charge of design, review and data.",
+    "content": "AI tools are now part of many development workflows. Used well, they save time. Used carelessly, they create code nobody understands. This is how we think about it.\n\n## Where AI helps\n\n- **Prototypes:** turning an idea into a rough working screen quickly, so you can react to something real.\n- **Tests:** drafting test cases that a developer then reviews and improves.\n- **Documentation:** summarising what a module does so new team members get up to speed faster.\n\n## Where humans must stay in charge\n\nArchitecture, security decisions and anything that touches customer data should be designed and reviewed by people. AI output is a draft. A developer who understands the system is the one who decides whether it ships.\n\n## Protect your data\n\nBefore pasting code or customer information into any AI tool, check what that tool does with it. Keep secrets, credentials and personal data out of prompts, and agree on clear rules for your team.\n\n## Review everything\n\n> Generated code should go through the same review as code written by a person.\n\nThat means readable pull requests, tests that pass, and a reviewer who can explain the change.\n\n## Building AI into your product\n\nIf you want AI features inside your own product, such as search, recommendations or document processing, start with one narrow problem and measure whether it helps users. Grow from there.\n\nInterested in what AI could do for your business? [Get in touch](/contact) and we will walk through the options with you.\n",
+    "category": "AI / ML",
+    "tags": [
+      "AI",
+      "Process",
+      "Engineering"
+    ],
+    "author": "Professional Techs Team",
+    "status": "published",
+    "featured": false,
+    "publishedAt": "2026-10-06T09:00:00.000Z",
+    "createdAt": "2026-10-06T09:00:00.000Z",
+    "updatedAt": "2026-10-06T09:00:00.000Z"
+  }
+]

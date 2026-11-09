@@ -1,7 +1,10 @@
 import { MetadataRoute } from 'next'
 import { SITE_URL } from '@/lib/constants'
+import { getPublishedPosts } from '@/lib/blog'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export const dynamic = 'force-dynamic'
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const routes = [
     '',
     '/about',
@@ -17,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/portfolio/vinpol',
     '/portfolio/albe-engineering',
     '/portfolio/jarcon-ltd',
+    '/blog',
     '/careers',
     '/contact',
     '/quote',
@@ -24,10 +28,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/terms-and-conditions',
   ]
 
-  return routes.map((route) => ({
+  const pages: MetadataRoute.Sitemap = routes.map((route) => ({
     url: `${SITE_URL}${route}`,
     lastModified: new Date(),
     changeFrequency: 'weekly',
     priority: route === '' ? 1 : 0.7,
   }))
+
+  const posts = await getPublishedPosts()
+  const postPages: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `${SITE_URL}/blog/${post.slug}`,
+    lastModified: new Date(post.updatedAt),
+    changeFrequency: 'monthly',
+    priority: 0.6,
+  }))
+
+  return [...pages, ...postPages]
 }

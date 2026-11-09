@@ -54,3 +54,11 @@ See `app/` for routes, `components/` for UI (layout, sections, three, ui, shared
 - Theme colors/fonts are centralized in `tailwind.config.ts` — adjust there, not per-component.
 - 3D scene (`components/three/HeroScene.tsx`) is loaded via `next/dynamic` with `ssr: false` to avoid SSR issues — keep this pattern for any new 3D components.
 - This codebase has not yet been `npm install`-ed or build-tested (sandboxed environment had no network access during scaffolding). First step for whoever picks this up: install dependencies and run a build to catch any issues.
+
+## Blog & Admin Dashboard
+
+- Public blog: `/blog` (search, category filters, featured post) and `/blog/[slug]` (article page with table of contents, share buttons, related posts, SEO + structured data).
+- Admin dashboard: `/admin` (sign in at `/admin/login`). Create, edit, publish/unpublish and delete posts, upload images, write in Markdown with live preview.
+- Setup: copy `.env.local.example` to `.env.local` and set `ADMIN_EMAIL`, `ADMIN_PASSWORD` and `ADMIN_SESSION_SECRET`, then run `npm install` (adds `react-markdown` and `remark-gfm`) and `npm run dev`.
+- Storage: posts are saved in `data/posts.json`, uploaded images in `data/uploads/` (served from `/media/<file>`). All reads/writes go through `lib/blog.ts`, so moving to a database later only means changing that one file.
+- Hosting note: saving from the dashboard needs a writable disk (VPS, cPanel Node hosting, or your own computer). On serverless hosts like Vercel the file system is read-only, so write posts locally and commit/deploy `data/posts.json` and `data/uploads/`, or switch `lib/blog.ts` to a database.
