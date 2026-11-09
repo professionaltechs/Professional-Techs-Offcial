@@ -37,9 +37,9 @@ export const postPatchSchema = postInputSchema.partial();
  * (like publish/unpublish) never wipe other fields.
  */
 export function cleanOptional<T extends object>(data: T): T {
-  const out: Record<string, unknown> = { ...data };
+  const out = { ...data } as Record<string, unknown>;
   for (const key of ["coverImage", "seoTitle", "seoDescription"]) {
     if (key in out && !out[key]) out[key] = undefined;
   }
-  return out as T;
+  return out as unknown as T;
 }
